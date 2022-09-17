@@ -1,0 +1,80 @@
+[
+    {
+       "description":"In 1 year and 9 months",
+       "startMargin":45,
+       "endMargin":45,
+       "startLineStyle":"normal",
+       "endLineStyle":"normal",
+       "items":[
+          {
+             "title":"Baby's birth",
+             "image":"family"
+          },
+          {
+             "title":"New home",
+             "image":"home"
+          }
+       ]
+    },
+    {
+       "description":"In 3 years and 2 months",
+       "startMargin":80,
+       "endMargin":80,
+       "startLineStyle":"normal",
+       "endLineStyle":"normal",
+       "items":[
+          {
+             "title":"Holiday",
+             "image":"holiday"
+          }
+       ]
+    },
+    {
+       "description":"In 4 years and 9 months",
+       "startMargin":50.5,
+       "endMargin":50.5,
+       "startLineStyle":"normal",
+       "endLineStyle":"normal",
+       "items":[
+          {
+             "title":"Emergency fund",
+             "image":"fund"
+          }
+       ]
+    },
+    {
+       "description":"In 8 years and 11 months",
+       "startMargin":87,
+       "endMargin":87,
+       "startLineStyle":"normal",
+       "endLineStyle":"dotted",
+       "items":[
+          {
+             "title":"Debt free",
+             "image":"debt"
+          }
+       ]
+    },
+    {
+       "description":"",
+       "endMargin":51,
+       "endLineStyle":"dotted",
+       "items":[
+          {
+             "title":"Retire",
+             "image":"retirement"
+          }
+       ]
+    },
+    {
+       "description":"Ultimately",
+       "startMargin":36,
+       "startLineStyle":"dotted",
+       "items":[
+          {
+             "title":"Make a contribution to my community through philantrophy",
+             "image":"vision"
+          }
+       ]
+    }
+ ]

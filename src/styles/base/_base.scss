@@ -1,0 +1,32 @@
+@import "settings";
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  font-family: $main-font-family;
+  width: 100vw;
+  height: 100vh;
+  font-weight: 600;
+  font-size: $font-size--regular;
+  overflow-x: hidden;
+  color: $white;
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+button {
+  font-family: $main-font-family;
+  outline: none;
+  border: 0;
+}
+
+p {
+  margin: 0;
+}
