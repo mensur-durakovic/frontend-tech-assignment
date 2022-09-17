@@ -1,13 +1,12 @@
-import { FC } from 'react';
-import Timeline from '../modules/timeline';
+import { FC } from 'react'
+import Timeline from '../modules/timeline'
 
 const HomePage: FC = () => {
   return (
     <main className='home-page'>
-      <Timeline/>
+      <Timeline />
     </main>
   )
 }
 
-
-export default HomePage;
+export default HomePage
