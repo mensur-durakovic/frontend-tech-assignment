@@ -1,9 +1,10 @@
 @import "./base/fonts";
 @import "./base/settings";
 @import "./base/base";
+@import "./base/mixins";
 
 //components
-//@import "./components/move.scss";
+@import "./components/start-circle";
 
 //pages
 @import "./pages/home";

@@ -1,0 +1,26 @@
+.start-circle {
+  &-wrapper {
+    @include flex-center-column;
+  }
+
+  &-outer {
+    @include flex-center-row;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background-color: $teal;
+    margin: 8px 4px;
+    border-radius: 50%;
+  }
+
+  &-inner {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $bg-green;
+  }
+
+  &-title {
+    @include timeline-text;
+  }
+}

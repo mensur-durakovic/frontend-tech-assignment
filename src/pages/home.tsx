@@ -1,8 +1,13 @@
+import { FC } from 'react';
+import Timeline from '../modules/timeline';
 
-export default function HomePage() {
+const HomePage: FC = () => {
   return (
     <main className='home-page'>
-      home page
+      <Timeline/>
     </main>
   )
 }
+
+
+export default HomePage;
