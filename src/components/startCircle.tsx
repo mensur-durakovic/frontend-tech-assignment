@@ -5,7 +5,7 @@ interface StartCircleProps {
   title?: string
 }
 
-const StartCircle: FC = ({ title = START_CIRCLE_DEFAULT_TITLE }: StartCircleProps) => {
+const StartCircle: FC<StartCircleProps> = ({ title = START_CIRCLE_DEFAULT_TITLE }) => {
   return (
     <div className='start-circle-wrapper'>
       <div className='start-circle-outer'>

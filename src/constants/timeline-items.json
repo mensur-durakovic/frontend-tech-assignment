@@ -5,14 +5,18 @@
        "endMargin":45,
        "startLineStyle":"normal",
        "endLineStyle":"normal",
-       "items":[
+       "images":[
           {
              "title":"Baby's birth",
-             "image":"family"
+             "image":"family",
+             "altText": "family",
+             "position": "top"
           },
           {
              "title":"New home",
-             "image":"home"
+             "image":"home",
+             "altText": "home",
+             "position": "down"
           }
        ]
     },
@@ -22,10 +26,12 @@
        "endMargin":80,
        "startLineStyle":"normal",
        "endLineStyle":"normal",
-       "items":[
+       "images":[
           {
              "title":"Holiday",
-             "image":"holiday"
+             "image":"holiday",
+             "altText": "holiday",
+             "position": "top"
           }
        ]
     },
@@ -35,10 +41,12 @@
        "endMargin":50.5,
        "startLineStyle":"normal",
        "endLineStyle":"normal",
-       "items":[
+       "images":[
           {
              "title":"Emergency fund",
-             "image":"fund"
+             "image":"fund",
+             "altText": "fund",
+             "position": "down"
           }
        ]
     },
@@ -48,10 +56,12 @@
        "endMargin":87,
        "startLineStyle":"normal",
        "endLineStyle":"dotted",
-       "items":[
+       "images":[
           {
              "title":"Debt free",
-             "image":"debt"
+             "image":"debt",
+             "altText": "debt",
+             "position": "down"
           }
        ]
     },
@@ -59,10 +69,12 @@
        "description":"",
        "endMargin":51,
        "endLineStyle":"dotted",
-       "items":[
+       "images":[
           {
              "title":"Retire",
-             "image":"retirement"
+             "image":"retirement",
+             "altText": "retirement",
+             "position": "top"
           }
        ]
     },
@@ -70,10 +82,12 @@
        "description":"Ultimately",
        "startMargin":36,
        "startLineStyle":"dotted",
-       "items":[
+       "images":[
           {
              "title":"Make a contribution to my community through philantrophy",
-             "image":"vision"
+             "image":"vision",
+             "altText": "vision",
+             "position": "down"
           }
        ]
     }

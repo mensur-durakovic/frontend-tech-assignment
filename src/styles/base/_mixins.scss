@@ -3,6 +3,11 @@
   color: $white;
   opacity: 0.6;
 }
+@mixin timeline-item-text {
+  line-height: 130%;
+  color: $white;
+  text-align: center;
+}
 
 @mixin flex-center-row {
   display: flex;
