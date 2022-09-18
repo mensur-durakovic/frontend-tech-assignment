@@ -3,8 +3,9 @@
        "description":"In 1 year and 9 months",
        "startMargin":45,
        "endMargin":45,
-       "startLineStyle":"normal",
-       "endLineStyle":"normal",
+       "startLineStyle":"solid",
+       "endLineStyle":"solid",
+       "hasDot": true,
        "images":[
           {
              "title":"Baby's birth",
@@ -16,7 +17,7 @@
              "title":"New home",
              "image":"home",
              "altText": "home",
-             "position": "down"
+             "position": "bottom"
           }
        ]
     },
@@ -24,8 +25,9 @@
        "description":"In 3 years and 2 months",
        "startMargin":80,
        "endMargin":80,
-       "startLineStyle":"normal",
-       "endLineStyle":"normal",
+       "startLineStyle":"solid",
+       "endLineStyle":"solid",
+       "hasDot": true,
        "images":[
           {
              "title":"Holiday",
@@ -39,56 +41,46 @@
        "description":"In 4 years and 9 months",
        "startMargin":50.5,
        "endMargin":50.5,
-       "startLineStyle":"normal",
-       "endLineStyle":"normal",
+       "startLineStyle":"solid",
+       "endLineStyle":"solid",
+       "hasDot": true,
        "images":[
           {
              "title":"Emergency fund",
              "image":"fund",
              "altText": "fund",
-             "position": "down"
+             "position": "bottom"
           }
        ]
     },
     {
        "description":"In 8 years and 11 months",
-       "startMargin":87,
-       "endMargin":87,
-       "startLineStyle":"normal",
-       "endLineStyle":"dotted",
+       "startMargin":138,
+       "endMargin":172,
+       "startLineStyle":"solid",
+       "endLineStyle":"dashed",
+       "hasDot": true,
        "images":[
           {
              "title":"Debt free",
              "image":"debt",
              "altText": "debt",
-             "position": "down"
+             "position": "bottom"
           }
-       ]
-    },
-    {
-       "description":"",
-       "endMargin":51,
-       "endLineStyle":"dotted",
-       "images":[
-          {
-             "title":"Retire",
-             "image":"retirement",
-             "altText": "retirement",
-             "position": "top"
-          }
-       ]
-    },
-    {
-       "description":"Ultimately",
-       "startMargin":36,
-       "startLineStyle":"dotted",
-       "images":[
-          {
-             "title":"Make a contribution to my community through philantrophy",
-             "image":"vision",
-             "altText": "vision",
-             "position": "down"
-          }
-       ]
+       ],
+       "halfEndItem": {
+         "description": "",
+         "title":"Retire",
+         "image":"retirement",
+         "altText": "retirement",
+         "position": "top"
+      },
+      "endItem":{
+         "description": "Ultimately",
+         "title":"Make a contribution to my community through philantrophy",
+         "image":"vision",
+         "altText": "vision",
+         "position": "bottom"
+      }
     }
  ]

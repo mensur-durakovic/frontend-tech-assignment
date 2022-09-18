@@ -1,16 +1,18 @@
 import { FC } from 'react'
-import timelineItems from '../constants/timeline-items.json'
+import timelineItemsJson from '../constants/timeline-items.json'
 import StartCircle from '../components/startCircle'
-import TimelineDot from '../components/timelineDot'
 import TimelineItem from '../components/timelineItem'
 
 const Timeline: FC = () => {
   return (
     <div className='timeline'>
       <StartCircle />
-      {timelineItems.map((ti) => (
+      {timelineItemsJson.map((ti, index) => (
         <TimelineItem
           key={ti.description}
+          isFirstItem={index === 0}
+          isLastItem={index === timelineItemsJson.length - 1}
+          hasDot={!!ti.hasDot}
           description={ti.description}
           startMargin={ti.startMargin}
           endMargin={ti.endMargin}

@@ -1,3 +1,4 @@
 .timeline {
   @include flex-center-row;
+  position: relative;
 }

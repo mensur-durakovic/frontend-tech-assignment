@@ -1,6 +1,13 @@
 .start-circle {
   &-wrapper {
     @include flex-center-column;
+    position: absolute;
+    left: -50px;
+    top: -5px;
+  }
+
+  &-body {
+    @include flex-center-row;
   }
 
   &-outer {
@@ -9,7 +16,7 @@
     width: 18px;
     height: 18px;
     background-color: $teal;
-    margin: 8px 4px;
+    margin: 0 4px;
     border-radius: 50%;
   }
 
@@ -22,5 +29,9 @@
 
   &-title {
     @include timeline-text;
+    max-width: 70px;
+    min-height: 36px;
+    text-align: center;
+    margin-top: 8px;
   }
 }
