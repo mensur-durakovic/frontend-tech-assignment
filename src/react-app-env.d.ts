@@ -6,6 +6,7 @@ interface TimelineItemImage {
   image: string
   altText: string
   position: string
+  description?: string
 }
 interface TimelineItemModel {
   description: string

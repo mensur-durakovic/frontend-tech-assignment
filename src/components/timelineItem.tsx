@@ -44,22 +44,59 @@ const TimelineItem: FC<TimelineItemProps> = ({
         {hasDot ? (
           <div className='timeline-item-dot-wrapper'>
             <TimelineDot />
-            {images.map((im) =>
-              im.position === 'bottom' ? (
-                <TimelineItemBottom
-                  key={im.image}
-                  description={im.title}
-                  timelineTitle={description}
-                  image={im.image}
-                  altText={im.altText}
-                />
-              ) : (
-                <React.Fragment key={im.image}>
-                  <TimelineItemTop description={im.title} image={im.image} altText={im.altText} />
-                  {!hasTwoImages && <TimelineItemTitle title={description} />}
-                </React.Fragment>
-              ),
-            )}
+            {images.map((im) => {
+              if (im.position === 'bottom') {
+                return (
+                  <TimelineItemBottom
+                    key={im.image}
+                    description={im.title}
+                    timelineTitle={description}
+                    image={im.image}
+                    altText={im.altText}
+                    startMargin={startMargin || 0}
+                    endMargin={endMargin || 0}
+                  />
+                )
+              } else if (im.position === 'right-end-bottom') {
+                return (
+                  <TimelineItemBottom
+                    key={im.image}
+                    description={im.title}
+                    timelineTitle={im.description || ''}
+                    image={im.image}
+                    altText={im.altText}
+                    position={im.position}
+                    startMargin={startMargin || 0}
+                    endMargin={endMargin || 0}
+                  />
+                )
+              } else if (im.position === 'top') {
+                return (
+                  <React.Fragment key={im.image}>
+                    <TimelineItemTop
+                      description={im.title}
+                      image={im.image}
+                      altText={im.altText}
+                      startMargin={startMargin || 0}
+                      endMargin={endMargin || 0}
+                    />
+                    {!hasTwoImages && <TimelineItemTitle title={description} />}
+                  </React.Fragment>
+                )
+              } else if (im.position === 'right-half-top') {
+                return (
+                  <TimelineItemTop
+                    key={im.image}
+                    description={im.title}
+                    image={im.image}
+                    altText={im.altText}
+                    isHalfTop={true}
+                    startMargin={startMargin || 0}
+                    endMargin={endMargin || 0}
+                  />
+                )
+              }
+            })}
           </div>
         ) : (
           <div

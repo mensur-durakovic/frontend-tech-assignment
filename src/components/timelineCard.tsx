@@ -8,15 +8,26 @@ interface TimelineCardProps {
   arrowPosition: string
 }
 
-const TimelineCard: FC<TimelineCardProps> = ({ image, altText, description, arrowPosition }) => {
+const TimelineCard: FC<TimelineCardProps> = ({
+  image,
+  altText,
+  description,
+  arrowPosition = 'top',
+}) => {
   let arrowClass = ''
   if (arrowPosition === 'top') {
-    arrowClass = 'timeline-card-top'
+    arrowClass = 'timeline-card-top-arrow'
   } else if (arrowPosition === 'bottom') {
-    arrowClass = 'timeline-card-bottom'
+    arrowClass = 'timeline-card-bottom-arrow'
+  } else if (arrowPosition === 'right-end') {
+    arrowClass = 'timeline-card-right-end-arrow'
   }
   return (
-    <div className={`timeline-card ${arrowClass}`}>
+    <div
+      className={`timeline-card ${arrowClass} ${
+        arrowPosition === 'right-end' ? 'timeline-card-light-green' : ''
+      }`}
+    >
       <img
         className='timeline-card-image'
         src={getImageByTitle(image)}

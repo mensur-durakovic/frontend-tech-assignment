@@ -1,4 +1,5 @@
 .timeline-item {
+  position: relative;
   &-middle {
     @include flex-center-row;
   }
@@ -6,6 +7,12 @@
   &-bottom-wrapper {
     position: absolute;
     bottom: -224px;
+    @include flex-center-column;
+  }
+
+  &-end-wrapper {
+    position: absolute;
+    bottom: -280px;
     @include flex-center-column;
   }
 
@@ -23,20 +30,21 @@
     height: 16px;
     margin: 15px 0 11px;
     width: 2px;
-    border-radius: 50%;
+    border-radius: 2px;
     background-color: $card-light-green;
 
     &-bottom {
       height: 16px;
       margin: 8px 0 15px;
       width: 2px;
-      border-radius: 50%;
+      border-radius: 2px;
       background-color: $card-light-green;
     }
   }
 
   &-title {
     @include timeline-text;
+    @include flex-center-row;
     max-width: 96px;
     min-height: 36px;
     text-align: center;

@@ -10,7 +10,13 @@
   justify-content: flex-start;
   position: relative;
 
-  &-bottom {
+  &-light-green {
+    background-color: $card-light-green;
+    left: -40px;
+    height: auto;
+  }
+
+  &-bottom-arrow {
     &::after {
       content: '';
       position: absolute;
@@ -25,7 +31,7 @@
     }
   }
 
-  &-top {
+  &-top-arrow {
     &::before {
       content: '';
       position: absolute;
@@ -35,6 +41,21 @@
       width: 0;
       height: 0;
       border-bottom: solid 7px $card-bg-green;
+      border-left: solid 7px transparent;
+      border-right: solid 7px transparent;
+    }
+  }
+
+  &-right-end-arrow {
+    &::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 80%;
+      margin-left: -7px;
+      width: 0;
+      height: 0;
+      border-bottom: solid 7px $card-light-green;
       border-left: solid 7px transparent;
       border-right: solid 7px transparent;
     }

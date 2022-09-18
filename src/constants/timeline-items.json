@@ -56,7 +56,7 @@
     {
        "description":"In 8 years and 11 months",
        "startMargin":138,
-       "endMargin":172,
+       "endMargin":174,
        "startLineStyle":"solid",
        "endLineStyle":"dashed",
        "hasDot": true,
@@ -66,21 +66,21 @@
              "image":"debt",
              "altText": "debt",
              "position": "bottom"
-          }
-       ],
-       "halfEndItem": {
-         "description": "",
-         "title":"Retire",
-         "image":"retirement",
-         "altText": "retirement",
-         "position": "top"
-      },
-      "endItem":{
-         "description": "Ultimately",
-         "title":"Make a contribution to my community through philantrophy",
-         "image":"vision",
-         "altText": "vision",
-         "position": "bottom"
-      }
+          },
+          {
+            "description": "",
+            "title":"Retire",
+            "image":"retirement",
+            "altText": "retirement",
+            "position": "right-half-top"
+         },
+         {
+            "description": "Ultimately",
+            "title":"Make a contribution to my community through philantrophy",
+            "image":"vision",
+            "altText": "vision",
+            "position": "right-end-bottom"
+         }
+       ]
     }
  ]

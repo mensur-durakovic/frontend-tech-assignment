@@ -7,6 +7,9 @@ interface TimelineItemBottomProps {
   altText?: string
   description?: string
   timelineTitle: string
+  position?: string
+  startMargin: number
+  endMargin: number
 }
 
 const TimelineItemBottom: FC<TimelineItemBottomProps> = ({
@@ -14,9 +17,26 @@ const TimelineItemBottom: FC<TimelineItemBottomProps> = ({
   altText,
   description,
   timelineTitle,
+  position = 'bottom',
+  startMargin,
+  endMargin,
 }) => {
+  let halfBottomOffset = 'auto'
+  if (position === 'right-end-bottom') {
+    const dotWithMargins = 16
+    const cardHalfWidth = 65
+    const total = startMargin + dotWithMargins + endMargin
+    halfBottomOffset = `${total - cardHalfWidth}px`
+  }
   return (
-    <div className='timeline-item-bottom-wrapper'>
+    <div
+      className={
+        position === 'right-end-bottom'
+          ? 'timeline-item-end-wrapper'
+          : 'timeline-item-bottom-wrapper'
+      }
+      style={{ left: halfBottomOffset }}
+    >
       <div className='timeline-item-title'>{timelineTitle}</div>
       {image && (
         <>
@@ -25,7 +45,7 @@ const TimelineItemBottom: FC<TimelineItemBottomProps> = ({
             image={image}
             altText={altText}
             description={description}
-            arrowPosition='top'
+            arrowPosition={position === 'right-end-bottom' ? 'right-end' : 'top'}
           />
         </>
       )}
