@@ -18,46 +18,26 @@
 
   &-bottom-arrow {
     &::after {
-      content: '';
-      position: absolute;
+      @include arrow;
       top: 100%;
       left: 50%;
-      margin-left: -7px;
-      width: 0;
-      height: 0;
       border-top: solid 7px $card-bg-green;
-      border-left: solid 7px transparent;
-      border-right: solid 7px transparent;
     }
   }
 
   &-top-arrow {
     &::before {
-      content: '';
-      position: absolute;
-      top: -7px;
+      @include arrow;
       left: 50%;
-      margin-left: -7px;
-      width: 0;
-      height: 0;
       border-bottom: solid 7px $card-bg-green;
-      border-left: solid 7px transparent;
-      border-right: solid 7px transparent;
     }
   }
 
   &-right-end-arrow {
     &::before {
-      content: '';
-      position: absolute;
-      top: -7px;
+      @include arrow;
       left: 80%;
-      margin-left: -7px;
-      width: 0;
-      height: 0;
       border-bottom: solid 7px $card-light-green;
-      border-left: solid 7px transparent;
-      border-right: solid 7px transparent;
     }
   }
 

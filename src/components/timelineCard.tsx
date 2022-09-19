@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { RIGHT_END, TOP } from '../constants/timeline'
 import { getImageByTitle } from '../utils/svgLibrary'
 
 interface TimelineCardProps {
@@ -12,22 +13,11 @@ const TimelineCard: FC<TimelineCardProps> = ({
   image,
   altText,
   description,
-  arrowPosition = 'top',
+  arrowPosition = TOP,
 }) => {
-  let arrowClass = ''
-  if (arrowPosition === 'top') {
-    arrowClass = 'timeline-card-top-arrow'
-  } else if (arrowPosition === 'bottom') {
-    arrowClass = 'timeline-card-bottom-arrow'
-  } else if (arrowPosition === 'right-end') {
-    arrowClass = 'timeline-card-right-end-arrow'
-  }
+  const rightEndCardClass = arrowPosition === RIGHT_END ? 'timeline-card-light-green' : ''
   return (
-    <div
-      className={`timeline-card ${arrowClass} ${
-        arrowPosition === 'right-end' ? 'timeline-card-light-green' : ''
-      }`}
-    >
+    <div className={`timeline-card timeline-card-${arrowPosition}-arrow ${rightEndCardClass}`}>
       <img
         className='timeline-card-image'
         src={getImageByTitle(image)}

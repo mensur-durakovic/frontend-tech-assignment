@@ -27,18 +27,12 @@
   }
 
   &-caret {
-    height: 16px;
+    @include caret;
     margin: 15px 0 11px;
-    width: 2px;
-    border-radius: 2px;
-    background-color: $card-light-green;
 
     &-bottom {
-      height: 16px;
+      @include caret;
       margin: 8px 0 15px;
-      width: 2px;
-      border-radius: 2px;
-      background-color: $card-light-green;
     }
   }
 

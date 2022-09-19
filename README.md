@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+## LifeCheq
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Application for timeline component built with React, JavaScript, and SCSS.
+## Project Screen Shot(s)
 
-## Available Scripts
+![timeline component](./screenshots/screenshot.jpg "Timeline")
+## Installation and Setup Instructions
 
-In the project directory, you can run:
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-### `yarn start`
+Installation:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm install`  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To Run Test Suite:  
 
-### `yarn test`
+`npm test`  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To Start Server:
 
-### `yarn build`
+`npm start`  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To Visit App:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`localhost:3000`  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Reflection
 
-### `yarn eject`
+This was a small project built for the LifeCheq frontend assignment.
+It contains a simple timeline component, which displays timeline items with images in the timeline component. It has only one page, so no react-router was added, as it is unnecessary. 
+Styling is done with pure SCSS from scratch, with no frameworks, so only one NPM dependency was added.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Timeline data is loaded from a JSON file as we don't fetch data from the backend server. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project structure is straightforward:
+- assets (folder for images, icons, audio, video, and other multimedia files)
+- components (contains simple components)
+- constants (contains text and other constants)
+- modules (folder for components that are fetching data and have side effects)
+- pages (folder for views/pages, one component is one route in the project)
+- styles (contains SCSS files for component styles, mirrors components directory structure)
+- utils (folder for utility scripts)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+There is no complex logic, state, or user feature in this app, so no tests are added.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project is set up with recommended linter and formatter for react typescript apps.

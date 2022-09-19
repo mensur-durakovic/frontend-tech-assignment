@@ -1,14 +1,15 @@
 import { FC } from 'react'
 import TimelineCard from './timelineCard'
 import TimelineItemCaret from './timelineItemCaret'
+import { DOT_WITH_MARGINS, CARD_HALF_WIDTH, BOTTOM } from '../constants/timeline'
 
 interface TimelineItemTopProps {
   image: string
   altText?: string
   description: string
   isHalfTop?: boolean
-  startMargin: number
-  endMargin: number
+  startMargin?: number
+  endMargin?: number
 }
 
 const TimelineItemTop: FC<TimelineItemTopProps> = ({
@@ -16,15 +17,13 @@ const TimelineItemTop: FC<TimelineItemTopProps> = ({
   altText,
   description,
   isHalfTop,
-  startMargin,
-  endMargin,
+  startMargin = 0,
+  endMargin = 0,
 }) => {
   let halfTopOffset = 'auto'
   if (isHalfTop) {
-    const dotWithMargins = 16
-    const cardHalfWidth = 65
-    const total = startMargin + dotWithMargins + endMargin / 2
-    halfTopOffset = `${total - cardHalfWidth}px`
+    const total = startMargin + DOT_WITH_MARGINS + endMargin / 2
+    halfTopOffset = `${total - CARD_HALF_WIDTH}px`
   }
   return (
     <div className='timeline-item-top-wrapper' style={{ left: halfTopOffset }}>
@@ -32,7 +31,7 @@ const TimelineItemTop: FC<TimelineItemTopProps> = ({
         image={image}
         altText={altText}
         description={description}
-        arrowPosition='bottom'
+        arrowPosition={BOTTOM}
       />
       <TimelineItemCaret />
     </div>

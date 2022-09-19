@@ -1,9 +1,9 @@
-import React, { FC } from 'react'
-import TimelineItemTop from './timelineItemTop'
-import TimelineDot from './timelineDot'
+import { FC } from 'react'
 import ArrowRight from './arrowRight'
-import TimelineItemBottom from './timelineItemBottom'
-import TimelineItemTitle from './timelineItemTitle'
+import StartLine from './startLine'
+import EndLine from './endLine'
+import DotPlaceholder from './dotPlaceholder'
+import TimelineItems from './timelineItems'
 interface TimelineItemProps {
   description: string
   startMargin?: number
@@ -27,102 +27,30 @@ const TimelineItem: FC<TimelineItemProps> = ({
   isLastItem,
   images,
 }) => {
-  const startMarginPx = startMargin ? `${isFirstItem ? startMargin + 20 : startMargin}px` : 0
-  const endMarginPx = endMargin ? `${endMargin}px` : 0
-  const hasTwoImages = images.length == 2
-
   return (
     <div className='timeline-item'>
       <div className='timeline-item-middle'>
-        {startMargin && (
-          <div
-            className={`timeline-item-line-${startLineStyle} 
-            ${
-              isFirstItem && startLineStyle === 'solid' ? 'timeline-item-start-line-first-item' : ''
-            }
-            ${
-              !isFirstItem && startLineStyle === 'solid'
-                ? 'timeline-item-start-line-normal-item'
-                : ''
-            } `}
-            style={{ width: startMarginPx }}
-          ></div>
-        )}
-
+        <StartLine
+          startMargin={startMargin}
+          startLineStyle={startLineStyle}
+          isFirstItem={isFirstItem}
+        />
         {hasDot ? (
-          <div className='timeline-item-dot-wrapper'>
-            <TimelineDot />
-            {images.map((im) => {
-              if (im.position === 'bottom') {
-                return (
-                  <TimelineItemBottom
-                    key={im.image}
-                    description={im.title}
-                    timelineTitle={description}
-                    image={im.image}
-                    altText={im.altText}
-                    startMargin={startMargin || 0}
-                    endMargin={endMargin || 0}
-                  />
-                )
-              } else if (im.position === 'right-end-bottom') {
-                return (
-                  <TimelineItemBottom
-                    key={im.image}
-                    description={im.title}
-                    timelineTitle={im.description || ''}
-                    image={im.image}
-                    altText={im.altText}
-                    position={im.position}
-                    startMargin={startMargin || 0}
-                    endMargin={endMargin || 0}
-                  />
-                )
-              } else if (im.position === 'top') {
-                return (
-                  <React.Fragment key={im.image}>
-                    <TimelineItemTop
-                      description={im.title}
-                      image={im.image}
-                      altText={im.altText}
-                      startMargin={startMargin || 0}
-                      endMargin={endMargin || 0}
-                    />
-                    {!hasTwoImages && <TimelineItemTitle title={description} />}
-                  </React.Fragment>
-                )
-              } else if (im.position === 'right-half-top') {
-                return (
-                  <TimelineItemTop
-                    key={im.image}
-                    description={im.title}
-                    image={im.image}
-                    altText={im.altText}
-                    isHalfTop={true}
-                    startMargin={startMargin || 0}
-                    endMargin={endMargin || 0}
-                  />
-                )
-              }
-            })}
-          </div>
+          <TimelineItems
+            description={description}
+            startMargin={startMargin}
+            endMargin={endMargin}
+            hasTwoImages={images.length == 2}
+            images={images}
+          />
         ) : (
-          <div
-            className={`timeline-item-line-${startMargin ? startLineStyle : endLineStyle}`}
-            style={{ width: '100%' }}
-          ></div>
+          <DotPlaceholder
+            startMargin={startMargin}
+            startLineStyle={startLineStyle}
+            endLineStyle={endLineStyle}
+          />
         )}
-
-        {endMargin && (
-          <div
-            className={`timeline-item-line-${endLineStyle} 
-            ${isFirstItem && endLineStyle === 'solid' ? 'timeline-item-end-line-first-item' : ''}
-            ${!isFirstItem && endLineStyle === 'solid' ? 'timeline-item-end-line-normal-item' : ''}
-              `}
-            style={{ width: endMarginPx }}
-          ></div>
-        )}
-
+        <EndLine endMargin={endMargin} endLineStyle={endLineStyle} isFirstItem={isFirstItem} />
         {isLastItem && <ArrowRight />}
       </div>
     </div>

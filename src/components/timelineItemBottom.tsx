@@ -1,6 +1,14 @@
 import { FC } from 'react'
 import TimelineCard from './timelineCard'
 import TimelineItemCaret from './timelineItemCaret'
+import {
+  BOTTOM,
+  CARD_HALF_WIDTH,
+  DOT_WITH_MARGINS,
+  RIGHT_END,
+  RIGHT_END_BOTTOM,
+  TOP,
+} from '../constants/timeline'
 
 interface TimelineItemBottomProps {
   image?: string
@@ -8,8 +16,8 @@ interface TimelineItemBottomProps {
   description?: string
   timelineTitle: string
   position?: string
-  startMargin: number
-  endMargin: number
+  startMargin?: number
+  endMargin?: number
 }
 
 const TimelineItemBottom: FC<TimelineItemBottomProps> = ({
@@ -17,26 +25,20 @@ const TimelineItemBottom: FC<TimelineItemBottomProps> = ({
   altText,
   description,
   timelineTitle,
-  position = 'bottom',
-  startMargin,
-  endMargin,
+  position = BOTTOM,
+  startMargin = 0,
+  endMargin = 0,
 }) => {
   let halfBottomOffset = 'auto'
-  if (position === 'right-end-bottom') {
-    const dotWithMargins = 16
-    const cardHalfWidth = 65
-    const total = startMargin + dotWithMargins + endMargin
-    halfBottomOffset = `${total - cardHalfWidth}px`
+  let className = 'timeline-item-bottom-wrapper'
+  if (position === RIGHT_END_BOTTOM) {
+    const total = startMargin + DOT_WITH_MARGINS + endMargin
+    halfBottomOffset = `${total - CARD_HALF_WIDTH}px`
+    className = 'timeline-item-end-wrapper'
   }
+
   return (
-    <div
-      className={
-        position === 'right-end-bottom'
-          ? 'timeline-item-end-wrapper'
-          : 'timeline-item-bottom-wrapper'
-      }
-      style={{ left: halfBottomOffset }}
-    >
+    <div className={className} style={{ left: halfBottomOffset }}>
       <div className='timeline-item-title'>{timelineTitle}</div>
       {image && (
         <>
@@ -45,7 +47,7 @@ const TimelineItemBottom: FC<TimelineItemBottomProps> = ({
             image={image}
             altText={altText}
             description={description}
-            arrowPosition={position === 'right-end-bottom' ? 'right-end' : 'top'}
+            arrowPosition={position === RIGHT_END_BOTTOM ? RIGHT_END : TOP}
           />
         </>
       )}
