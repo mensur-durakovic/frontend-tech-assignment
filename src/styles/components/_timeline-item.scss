@@ -57,12 +57,27 @@
 
   &-line-solid {
     border: 2px solid $white;
-    border-radius: 2px;
     box-sizing: border-box;
   }
 
   &-line-dashed {
     border-top: 2px dotted $white;
     box-sizing: border-box;
+  }
+
+  &-start-line-first-item {
+    border-radius: 2px;
+  }
+
+  &-start-line-normal-item {
+    border-radius: 0 2px 2px 0;
+  }
+
+  &-end-line-first-item {
+    border-radius: 2px 0 0 2px;
+  }
+
+  &-end-line-normal-item {
+    border-radius: 2px 0 0 2px;
   }
 }

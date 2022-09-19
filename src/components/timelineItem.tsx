@@ -36,7 +36,15 @@ const TimelineItem: FC<TimelineItemProps> = ({
       <div className='timeline-item-middle'>
         {startMargin && (
           <div
-            className={`timeline-item-line-${startLineStyle}`}
+            className={`timeline-item-line-${startLineStyle} 
+            ${
+              isFirstItem && startLineStyle === 'solid' ? 'timeline-item-start-line-first-item' : ''
+            }
+            ${
+              !isFirstItem && startLineStyle === 'solid'
+                ? 'timeline-item-start-line-normal-item'
+                : ''
+            } `}
             style={{ width: startMarginPx }}
           ></div>
         )}
@@ -107,7 +115,10 @@ const TimelineItem: FC<TimelineItemProps> = ({
 
         {endMargin && (
           <div
-            className={`timeline-item-line-${endLineStyle}`}
+            className={`timeline-item-line-${endLineStyle} 
+            ${isFirstItem && endLineStyle === 'solid' ? 'timeline-item-end-line-first-item' : ''}
+            ${!isFirstItem && endLineStyle === 'solid' ? 'timeline-item-end-line-normal-item' : ''}
+              `}
             style={{ width: endMarginPx }}
           ></div>
         )}
